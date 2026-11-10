@@ -1429,7 +1429,7 @@
           <div id="envelopeLetterPreview" class="envelope-letter-preview">
             <div class="letter-preview-header">✨ Tri Ân Ngày Nhà Giáo 20/11 ✨</div>
             <div class="letter-preview-lines" id="envelopePreviewLines">
-              Kính gửi Cô yêu quý!
+              Lời Chúc Yêu Thương
             </div>
           </div>
 
@@ -1481,7 +1481,7 @@
       </svg>
 
       <div class="letter-top-ornament">
-        <div id="letterLotusDivider" class="lotus-divider">✿ Thiệp Chúc Mừng 20/11 ✿</div>
+        <div id="letterLotusDivider" class="lotus-divider">✿ Lời Chúc Yêu Thương ✿</div>
       </div>
 
       <svg class="letter-floral-watermark" viewBox="0 0 120 120" fill="none">
@@ -1580,9 +1580,7 @@
         wishNumber: 1,
         title: "Thiệp Tri Ân #01",
         shortText: "Chúc cô luôn vững tin với con đường mình đang đi...",
-        fullText: `Kính gửi Cô yêu quý!
-
-Chúc cô luôn vững tin với con đường mình đang đi. Những việc nhỏ cô làm bằng tình yêu hôm nay sẽ tạo nên những giá trị lớn lao ngày mai.
+        fullText: `Chúc cô luôn vững tin với con đường mình đang đi. Những việc nhỏ cô làm bằng tình yêu hôm nay sẽ tạo nên những giá trị lớn lao ngày mai.
 
 Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       },
@@ -1590,9 +1588,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
         wishNumber: 2,
         title: "Thiệp Tri Ân #02",
         shortText: "Chúc cô luôn đủ đầy sức khỏe, kiên nhẫn, yêu thương...",
-        fullText: `Kính gửi Cô yêu quý!
-
-Chúc cô luôn đủ đầy!
+        fullText: `Chúc cô luôn đủ đầy!
 Đủ sức khỏe để chăm sóc các con, đủ kiên nhẫn trước những tình huống bất ngờ, đủ yêu thương để sẻ chia và đủ hạnh phúc để mỉm cười mỗi ngày.
 
 Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
@@ -1601,9 +1597,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
         wishNumber: 3,
         title: "Thiệp Tri Ân #03",
         shortText: "Chúc cô luôn là phiên bản hạnh phúc nhất của chính mình...",
-        fullText: `Kính gửi Cô yêu quý!
-
-Chúc cô luôn là phiên bản hạnh phúc nhất của chính mình!
+        fullText: `Chúc cô luôn là phiên bản hạnh phúc nhất của chính mình!
 Mong cô không chỉ có những giờ dạy học thật vui mà còn có một gia đình bình an, những người đồng nghiệp tuyệt vời và thật nhiều khoảnh khắc đáng nhớ.
 
 Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
@@ -1612,9 +1606,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
         wishNumber: 4,
         title: "Thiệp Tri Ân #04",
         shortText: "Chúc cô luôn được tiếp thêm động lực và cảm thấy có giá trị...",
-        fullText: `Kính gửi Cô yêu quý!
-
-Chúc cô luôn được tiếp thêm động lực, luôn cảm thấy mình có giá trị và luôn nhớ rằng: Có những tình yêu không cần nói thành lời, nhưng sẽ theo các con suốt cả cuộc đời.
+        fullText: `Chúc cô luôn được tiếp thêm động lực, luôn cảm thấy mình có giá trị và luôn nhớ rằng: Có những tình yêu không cần nói thành lời, nhưng sẽ theo các con suốt cả cuộc đời.
 
 Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       }
@@ -1958,9 +1950,9 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       document.getElementById("envelopeStageBadge").textContent =
         `💌 Hộp quà thứ ${stepNumber} / ${TOTAL_BOXES} • ${wishObj.title} (Lời chúc số ${wishObj.wishNumber})`;
       document.getElementById("letterLotusDivider").textContent =
-        `✿ ${wishObj.title} • Lời Chúc Số ${wishObj.wishNumber} ✿`;
+        `✿ Lời Chúc Yêu Thương ✿`;
       document.getElementById("envelopePreviewLines").innerHTML =
-        `Kính gửi Cô yêu quý!<br/>${wishObj.shortText}`;
+        `${wishObj.shortText}`;
 
       const continueText = document.getElementById("continueAfterLetterText");
       if (isReviewingFromSummary) {
@@ -2104,7 +2096,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
           isReviewingFromSummary = true;
           activeWishText = w.fullText;
           document.getElementById("letterLotusDivider").textContent =
-            `✿ ${w.title} • Lời Chúc Số ${w.wishNumber} ✿`;
+            `✿ Lời Chúc Yêu Thương ✿`;
           document.getElementById("continueAfterLetterText").textContent = "Đóng thiệp";
           letterFullscreenOverlay.classList.add("active");
           startFountainPenTypewriter();
