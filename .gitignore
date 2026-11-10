@@ -1,0 +1,4 @@
+*.png
+*.jpg
+!assets/*
+!qr_codes/*
