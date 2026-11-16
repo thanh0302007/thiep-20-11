@@ -6,15 +6,18 @@
   <title>Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E" />
 
-  <!-- Preload hình ảnh bao thư & 6 món quà để hiệu ứng mở quà tức thì -->
-  <link rel="preload" as="image" href="assets/envelope_front.jpg" />
-  <link rel="preload" as="image" href="assets/envelope_back.jpg" />
-  <link rel="preload" as="image" href="assets/gift_1.png" />
+  <!-- Preload hình ảnh 11 món quà để hiệu ứng mở quà tức thì -->
   <link rel="preload" as="image" href="assets/gift_2.png" />
   <link rel="preload" as="image" href="assets/gift_3.png" />
   <link rel="preload" as="image" href="assets/gift_4.png" />
-  <link rel="preload" as="image" href="assets/gift_5.png" />
-  <link rel="preload" as="image" href="assets/gift_6.png" />
+  <link rel="preload" as="image" href="assets/gift_7.png" />
+  <link rel="preload" as="image" href="assets/gift_8.png" />
+  <link rel="preload" as="image" href="assets/gift_9.png" />
+  <link rel="preload" as="image" href="assets/gift_10.png" />
+  <link rel="preload" as="image" href="assets/gift_11.png" />
+  <link rel="preload" as="image" href="assets/gift_12.png" />
+  <link rel="preload" as="image" href="assets/gift_13.png" />
+  <link rel="preload" as="image" href="assets/gift_14.png" />
 
   <!-- Google Fonts: Charm (chữ bút máy thư pháp) & Be Vietnam Pro / Quicksand (UI hiện đại, dễ đọc) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,7 +197,7 @@
       transition: all 0.4s ease;
     }
 
-    /* Thanh trạng thái đếm tiến độ 10 món quà */
+    /* Thanh trạng thái đếm tiến độ 11 món quà */
     .progress-bar-wrap {
       display: inline-flex;
       flex-direction: column;
@@ -228,6 +231,8 @@
     .progress-dots {
       display: flex;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 7px;
     }
 
@@ -247,7 +252,7 @@
       box-shadow: 0 0 10px rgba(197, 155, 39, 0.65);
     }
 
-    /* ================= SÂN KHẤU 10 HỘP QUÀ (2 HÀNG x 5 HỘP) ================= */
+    /* ================= SÂN KHẤU 11 HỘP QUÀ (HÀNG TRÊN 6, HÀNG DƯỚI 5) ================= */
     .stage-wrapper {
       position: relative;
       width: 100%;
@@ -260,11 +265,11 @@
 
     .gifts-stage {
       width: 100%;
-      max-width: 980px;
+      max-width: 1060px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
@@ -272,15 +277,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: clamp(12px, 3vw, 34px);
+      gap: clamp(8px, 1.8vw, 22px);
       width: 100%;
       flex-wrap: nowrap;
     }
 
     /* Khung giữ vị trí từng hộp quà */
     .gift-slot {
-      width: clamp(105px, 16vw, 148px);
-      height: clamp(118px, 17.5vw, 160px);
+      width: clamp(92px, 12vw, 128px);
+      height: clamp(106px, 13.5vw, 142px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -460,7 +465,7 @@
       pointer-events: none !important;
     }
 
-    /* ================= MÀN HÌNH TỔNG KẾT SAU KHI MỞ HẾT 10 HỘP ================= */
+    /* ================= MÀN HÌNH TỔNG KẾT SAU KHI MỞ HẾT 11 HỘP ================= */
     .completion-panel {
       display: none;
       flex-direction: column;
@@ -470,7 +475,7 @@
       border: 2px solid rgba(197, 155, 39, 0.6);
       border-radius: 26px;
       padding: 28px 24px;
-      max-width: 880px;
+      max-width: 980px;
       width: 100%;
       box-shadow: 0 20px 50px rgba(128, 45, 65, 0.16);
       animation: stageFadeIn 0.7s ease forwards;
@@ -496,8 +501,8 @@
 
     .unlocked-wishes-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
       width: 100%;
       margin-bottom: 20px;
     }
@@ -506,35 +511,36 @@
       background: linear-gradient(145deg, #FFFDFD, #FDF0F4);
       border: 1.5px solid rgba(197, 155, 39, 0.55);
       border-radius: 16px;
-      padding: 14px 12px;
+      padding: 12px 10px;
       cursor: pointer;
       transition: all 0.22s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: 8px;
     }
     .unlocked-wish-card:hover {
       transform: translateY(-3px);
       background: #FDF0D5;
       box-shadow: 0 8px 20px rgba(197, 155, 39, 0.22);
     }
-    .unlocked-wish-card strong {
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-size: 1.22rem;
-      color: var(--accent-rose-dark);
+    .unlocked-wish-card img {
+      height: 64px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(95, 42, 54, 0.16));
     }
-    .unlocked-wish-card span {
-      font-size: 0.8rem;
-      color: var(--ink-muted);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+    .unlocked-wish-card strong {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink-brown);
+      line-height: 1.3;
     }
 
-    /* ================= MODAL NHẬN MÓN QUÀ THỰC TẾ (6 HỘP QUÀ) ================= */
+    /* ================= MODAL NHẬN MÓN QUÀ THỰC TẾ (11 HỘP QUÀ) ================= */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -694,560 +700,6 @@
         0 0 16px rgba(197, 155, 39, 0.4);
     }
 
-    /* ================= SÂN KHẤU MODAL BAO THƯ 3D (CHO 4 HỘP LỜI CHÚC) ================= */
-    .envelope-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 110;
-      background: rgba(66, 28, 37, 0.54);
-      backdrop-filter: blur(8px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.45s ease;
-    }
-
-    .envelope-modal-backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .envelope-stage-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #FFFDF7, #F9E8B2);
-      color: #7A4E05;
-      font-size: 0.88rem;
-      font-weight: 700;
-      padding: 6px 18px;
-      border-radius: 99px;
-      border: 1.5px solid var(--accent-gold);
-      margin-bottom: 16px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-    }
-
-    .envelope-scene {
-      position: relative;
-      width: min(92vw, 540px);
-      aspect-ratio: 708 / 541;
-      perspective: 1600px;
-      margin-bottom: 22px;
-      transition: transform 0.9s ease, opacity 0.8s ease, filter 0.8s ease;
-    }
-
-    .envelope-scene.recede-back {
-      transform: translateY(48px) scale(0.86);
-      opacity: 0;
-      filter: blur(4px);
-      pointer-events: none;
-    }
-
-    .envelope-card {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-      cursor: pointer;
-      border-radius: 12px;
-    }
-
-    .envelope-card.flipped {
-      transform: rotateY(180deg);
-      cursor: default;
-    }
-
-    .envelope-face {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-
-    .envelope-front {
-      background-color: #F7DDE2;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      box-shadow:
-        0 22px 52px rgba(35, 10, 18, 0.42),
-        0 0 0 2px rgba(232, 201, 107, 0.65),
-        inset 0 0 18px rgba(255, 255, 255, 0.4);
-      overflow: hidden;
-      transform: rotateY(0deg) translateZ(2px);
-    }
-
-    .envelope-front::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -120%;
-      width: 65%;
-      height: 100%;
-      background: linear-gradient(
-        105deg,
-        transparent 20%,
-        rgba(255, 248, 220, 0.38) 50%,
-        transparent 80%
-      );
-      transform: skewX(-20deg);
-      animation: foilShimmer 4.5s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes foilShimmer {
-      0%, 100% { left: -120%; }
-      45%, 55% { left: 140%; }
-    }
-
-    .envelope-back {
-      transform: rotateY(180deg) translateZ(2px);
-      transform-style: preserve-3d;
-      border-radius: 12px;
-      box-shadow:
-        0 22px 52px rgba(35, 10, 18, 0.42),
-        0 0 0 2px rgba(232, 201, 107, 0.55);
-      background: #DFBEC5;
-      overflow: visible;
-    }
-
-    .envelope-interior-throat {
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      background: linear-gradient(180deg, #CFA7B0 0%, #DFBDC5 45%, #EAD0D6 100%);
-      box-shadow: inset 0 10px 28px rgba(88, 34, 46, 0.28);
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .envelope-letter-preview {
-      position: absolute;
-      left: 7%;
-      right: 7%;
-      top: 8%;
-      height: 84%;
-      background: linear-gradient(180deg, #FFFDFD 0%, #FDF1F4 100%);
-      border-radius: 10px;
-      border: 1.5px solid rgba(197, 155, 39, 0.65);
-      box-shadow:
-        0 -4px 16px rgba(92, 36, 48, 0.18),
-        inset 0 0 0 5px rgba(255, 255, 255, 0.8),
-        inset 0 0 0 6px rgba(197, 155, 39, 0.28);
-      z-index: 2;
-      padding: 22px 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transform: translateY(0%);
-      transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
-      overflow: hidden;
-    }
-
-    .envelope-letter-preview.pull-out {
-      transform: translateY(-74%);
-    }
-
-    .letter-preview-header {
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-weight: 700;
-      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-      color: var(--accent-gold-dark);
-      margin-bottom: 8px;
-    }
-
-    .letter-preview-lines {
-      width: 88%;
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      color: var(--ink-brown);
-      line-height: 1.75;
-      opacity: 0.85;
-    }
-
-    .envelope-pocket-body {
-      position: absolute;
-      inset: 0;
-      border-radius: 12px;
-      background-size: 100% 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      clip-path: polygon(
-        0% 2%,
-        45.5% 63.5%,
-        48.5% 65.5%,
-        50% 66%,
-        51.5% 65.5%,
-        54.5% 63.5%,
-        100% 2%,
-        100% 100%,
-        0% 100%
-      );
-      z-index: 3;
-      pointer-events: none;
-    }
-
-    .envelope-pocket-rim {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .envelope-card.flap-open .envelope-pocket-rim {
-      opacity: 1;
-    }
-
-    .envelope-flap-3d {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      transform-origin: top center;
-      transform-style: preserve-3d;
-      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 4;
-      pointer-events: none;
-    }
-
-    .envelope-card.flap-open .envelope-flap-3d {
-      transform: rotateX(180deg);
-    }
-
-    .envelope-card.flap-behind .envelope-flap-3d {
-      z-index: 1;
-    }
-
-    .flap-outer-face {
-      position: absolute;
-      inset: 0;
-      background-size: 100% 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        100% 3.2%,
-        54.5% 64%,
-        51.5% 65.8%,
-        50% 66.2%,
-        48.5% 65.8%,
-        45.5% 64%,
-        0% 3.2%
-      );
-    }
-
-    .flap-inner-face {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, #E3C0C8 0%, #F1D8DE 60%, #F6E3E7 100%);
-      transform: rotateX(180deg);
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        100% 3.2%,
-        54.5% 64%,
-        51.5% 65.8%,
-        50% 66.2%,
-        48.5% 65.8%,
-        45.5% 64%,
-        0% 3.2%
-      );
-      box-shadow: inset 0 -6px 16px rgba(120, 50, 65, 0.18);
-    }
-
-    .open-love-btn-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      transition: opacity 0.45s ease, transform 0.45s ease;
-    }
-
-    .open-love-btn-wrap.hidden-btn {
-      opacity: 0;
-      transform: translateY(12px);
-      pointer-events: none;
-    }
-
-    .open-love-btn {
-      position: relative;
-      padding: 13px 34px;
-      border-radius: 999px;
-      border: 2px solid #E5C158;
-      background: linear-gradient(135deg, #D97F91 0%, #B85267 50%, #983B4F 100%);
-      color: #FFFDF9;
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 1.42rem;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      box-shadow:
-        0 0 25px rgba(212, 165, 40, 0.55),
-        0 10px 28px rgba(168, 68, 90, 0.38),
-        inset 0 1px 3px rgba(255, 255, 255, 0.5);
-      animation: loveBtnGlow 2.2s ease-in-out infinite;
-      transition: transform 0.25s ease;
-    }
-
-    .open-love-btn:hover {
-      transform: translateY(-3px) scale(1.04);
-    }
-
-    @keyframes loveBtnGlow {
-      0%, 100% {
-        box-shadow:
-          0 0 18px rgba(212, 165, 40, 0.45),
-          0 10px 26px rgba(168, 68, 90, 0.35);
-      }
-      50% {
-        box-shadow:
-          0 0 34px rgba(235, 185, 45, 0.85),
-          0 14px 34px rgba(168, 68, 90, 0.5);
-      }
-    }
-
-    .envelope-status-caption {
-      font-size: 0.9rem;
-      color: #FFF5F7;
-      font-weight: 600;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-    }
-
-    /* ================= KHUNG ĐỌC TẤM THIỆP & HIỆU ỨNG BÚT MÁY ================= */
-    .letter-fullscreen-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 120;
-      background: rgba(54, 20, 28, 0.52);
-      backdrop-filter: blur(7px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px 14px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.55s ease;
-    }
-
-    .letter-fullscreen-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .letter-paper-card {
-      position: relative;
-      width: 100%;
-      max-width: 650px;
-      max-height: 88vh;
-      background:
-        radial-gradient(circle at 85% 90%, rgba(244, 198, 210, 0.42) 0%, transparent 50%),
-        radial-gradient(circle at 15% 12%, rgba(248, 215, 224, 0.38) 0%, transparent 45%),
-        linear-gradient(180deg, #FFFDFD 0%, #FDF2F5 52%, #F9E7EC 100%);
-      border-radius: 22px;
-      border: 2px solid rgba(197, 155, 39, 0.65);
-      box-shadow:
-        0 28px 70px rgba(58, 20, 30, 0.38),
-        inset 0 0 0 7px rgba(255, 255, 255, 0.72),
-        inset 0 0 0 8.5px rgba(197, 155, 39, 0.38);
-      padding: clamp(24px, 4.5vw, 40px) clamp(22px, 5vw, 46px) clamp(24px, 4vw, 34px);
-      display: flex;
-      flex-direction: column;
-      transform: translateY(40px) scale(0.84);
-      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-      overflow: hidden;
-    }
-
-    .letter-fullscreen-overlay.active .letter-paper-card {
-      transform: translateY(0) scale(1);
-    }
-
-    .corner-ornament {
-      position: absolute;
-      width: 38px;
-      height: 38px;
-      pointer-events: none;
-      opacity: 0.78;
-      z-index: 3;
-    }
-    .corner-ornament.tl { top: 14px; left: 14px; }
-    .corner-ornament.tr { top: 14px; right: 14px; transform: scaleX(-1); }
-    .corner-ornament.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
-    .corner-ornament.br { bottom: 14px; right: 14px; transform: scale(-1, -1); }
-
-    .letter-top-ornament {
-      text-align: center;
-      margin-bottom: 10px;
-      flex-shrink: 0;
-    }
-
-    .letter-top-ornament .lotus-divider {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent-gold-dark);
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 1.18rem;
-    }
-
-    .letter-top-ornament .lotus-divider::before,
-    .letter-top-ornament .lotus-divider::after {
-      content: '';
-      width: 52px;
-      height: 1.5px;
-      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-    }
-
-    .letter-scroll-body {
-      position: relative;
-      z-index: 2;
-      flex: 1;
-      overflow-y: auto;
-      padding: 6px 10px 18px 6px;
-      background-image: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 39px,
-        rgba(212, 122, 140, 0.22) 39px,
-        rgba(212, 122, 140, 0.22) 40px
-      );
-      background-attachment: local;
-    }
-
-    .fountain-pen-content {
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.26rem, 2.7vw, 1.48rem);
-      line-height: 40px;
-      color: var(--ink-brown);
-      white-space: pre-wrap;
-      word-break: break-word;
-      letter-spacing: 0.2px;
-    }
-
-    .fountain-pen-cursor {
-      display: inline-block;
-      margin-left: 3px;
-      font-style: normal;
-      font-size: 1.25rem;
-      transform: translateY(-2px);
-      animation: penNibWrite 0.36s ease-in-out infinite alternate;
-    }
-
-    .fountain-pen-cursor.hidden-cursor {
-      display: none;
-    }
-
-    @keyframes penNibWrite {
-      from { transform: translate(0, -1px) rotate(-8deg); }
-      to { transform: translate(2px, -5px) rotate(6deg); }
-    }
-
-    .letter-floral-watermark {
-      position: absolute;
-      right: 18px;
-      bottom: 58px;
-      width: 135px;
-      height: 135px;
-      opacity: 0.2;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .letter-footer {
-      position: relative;
-      z-index: 4;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px dashed rgba(197, 155, 39, 0.45);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .wax-seal-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .wax-seal-circle {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #D95B72 0%, #A82840 65%, #7A1527 100%);
-      border: 2px dashed rgba(243, 209, 107, 0.75);
-      box-shadow:
-        0 4px 12px rgba(122, 21, 39, 0.38),
-        inset 0 2px 5px rgba(255, 200, 210, 0.4),
-        inset 0 -3px 6px rgba(60, 5, 15, 0.5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Charm', cursive;
-      font-weight: 700;
-      color: #FCE694;
-      line-height: 1;
-      transform: rotate(-8deg);
-    }
-
-    .wax-seal-circle span:first-child { font-size: 0.62rem; }
-    .wax-seal-circle span:last-child { font-size: 0.9rem; }
-
-    .wax-seal-caption {
-      font-family: 'Charm', cursive;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--ink-muted);
-    }
-
-    .letter-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .secondary-paper-btn {
-      padding: 8px 15px;
-      border-radius: 99px;
-      border: 1.5px solid rgba(197, 155, 39, 0.55);
-      background: rgba(255, 250, 251, 0.92);
-      color: var(--ink-brown);
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 700;
-      font-size: 0.84rem;
-      cursor: pointer;
-      transition: all 0.22s ease;
-    }
-    .secondary-paper-btn:hover {
-      background: #FDF0D5;
-      border-color: var(--accent-gold-dark);
-      transform: translateY(-1px);
-    }
-
     .site-footer {
       text-align: center;
       font-size: 0.84rem;
@@ -1274,14 +726,15 @@
         font-size: 0.76rem;
       }
       .gifts-stage {
-        gap: 18px;
+        gap: 14px;
       }
       .gifts-row {
-        gap: 6px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       .gift-slot {
-        width: clamp(62px, 18vw, 95px);
-        height: clamp(74px, 20vw, 108px);
+        width: clamp(68px, 21vw, 88px);
+        height: clamp(80px, 23vw, 100px);
       }
       .gift-bow {
         width: 40px;
@@ -1297,23 +750,6 @@
       }
       .gift-modal-img {
         max-height: 175px;
-      }
-      .letter-paper-card {
-        max-height: 91vh;
-        padding: 20px 16px 18px;
-      }
-      .fountain-pen-content {
-        font-size: 1.2rem;
-        line-height: 36px;
-      }
-      .letter-scroll-body {
-        background-image: repeating-linear-gradient(
-          to bottom,
-          transparent 0px,
-          transparent 35px,
-          rgba(212, 122, 140, 0.22) 35px,
-          rgba(212, 122, 140, 0.22) 36px
-        );
       }
     }
   </style>
@@ -1335,20 +771,20 @@
   </button>
 
   <div class="app-container">
-    <!-- PHẦN ĐẦU TRANG: TIÊU ĐỀ & THANH TIẾN ĐỘ 10 MÓN QUÀ -->
+    <!-- PHẦN ĐẦU TRANG: TIÊU ĐỀ & THANH TIẾN ĐỘ 11 MÓN QUÀ -->
     <header class="site-header">
       <div class="date-badge">🌸 Tri Ân Ngày Nhà Giáo Việt Nam 20 • 11 🌸</div>
       <h1 class="main-title">
         Chúc Mừng <span class="gold-accent">Ngày Nhà Giáo Việt Nam</span> 20/11
       </h1>
       <p id="subInstruction" class="sub-instruction">
-        Hãy chạm vào bất kỳ hộp quà nào (gồm 6 món quà &amp; 4 bức tâm thư xuất hiện ngẫu nhiên) dành tặng Cô nhé!
+        Hãy chạm vào bất kỳ hộp quà nào trong 11 hộp quà bất ngờ xuất hiện ngẫu nhiên dành tặng Cô nhé!
       </p>
 
       <div class="progress-bar-wrap">
         <div class="progress-text">
           <span>Đã mở:</span>
-          <span id="progressCountText" class="progress-count-badge">0/10 hộp quà</span>
+          <span id="progressCountText" class="progress-count-badge">0/11 hộp quà</span>
         </div>
         <div id="progressDots" class="progress-dots">
           <span class="progress-dot" data-step="1"></span>
@@ -1361,6 +797,7 @@
           <span class="progress-dot" data-step="8"></span>
           <span class="progress-dot" data-step="9"></span>
           <span class="progress-dot" data-step="10"></span>
+          <span class="progress-dot" data-step="11"></span>
         </div>
       </div>
     </header>
@@ -1368,21 +805,21 @@
     <!-- KHU VỰC SÂN KHẤU TRUNG TÂM -->
     <main class="stage-wrapper">
 
-      <!-- SÂN KHẤU 10 HỘP QUÀ (Hàng trên 5 hộp, Hàng dưới 5 hộp) -->
-      <section id="giftsStage" class="gifts-stage" aria-label="Sân khấu 10 hộp quà">
+      <!-- SÂN KHẤU 11 HỘP QUÀ (Hàng trên 6 hộp, Hàng dưới 5 hộp) -->
+      <section id="giftsStage" class="gifts-stage" aria-label="Sân khấu 11 hộp quà">
         <div class="gifts-row" id="giftsRowTop"></div>
         <div class="gifts-row" id="giftsRowBottom"></div>
       </section>
 
-      <!-- MÀN HÌNH TỔNG KẾT SAU KHI ĐÃ MỞ HẾT CẢ 10 HỘP QUÀ -->
-      <section id="completionPanel" class="completion-panel" aria-label="Tổng kết 10 hộp quà 20/11">
-        <h2 class="completion-title">🎉 Cô Đã Mở Trọn Vẹn 10 Hộp Quà Yêu Thương! 🎉</h2>
+      <!-- MÀN HÌNH TỔNG KẾT SAU KHI ĐÃ MỞ HẾT CẢ 11 HỘP QUÀ -->
+      <section id="completionPanel" class="completion-panel" aria-label="Tổng kết 11 hộp quà 20/11">
+        <h2 class="completion-title">🎉 Cô Đã Mở Trọn Vẹn 11 Hộp Quà Yêu Thương! 🎉</h2>
         <p class="completion-sub">
-          Nhấn vào bất kỳ bức thiệp nào bên dưới để đọc lại lời chúc, hoặc mở lại từ đầu với thứ tự ngẫu nhiên mới:
+          Nhấn vào bất kỳ món quà nào bên dưới để xem lại, hoặc mở lại từ đầu với thứ tự ngẫu nhiên mới:
         </p>
         <div id="unlockedWishesRow" class="unlocked-wishes-row"></div>
         <button id="resetAllBoxesBtn" class="primary-gold-btn" type="button">
-          <span>🔄 Mở lại 10 hộp quà (Trộn ngẫu nhiên mới)</span>
+          <span>🔄 Mở lại 11 hộp quà (Trộn ngẫu nhiên mới)</span>
         </button>
       </section>
 
@@ -1396,7 +833,7 @@
   <!-- Audio nhạc nền bài hát Người Gieo Mầm Xanh -->
   <audio id="bgmAudio" src="assets/bgm.mp3" preload="auto" loop></audio>
 
-  <!-- MODAL HIỂN THỊ MÓN QUÀ THỰC TẾ (KHI TRÚNG 1 TRONG 6 HỘP QUÀ) -->
+  <!-- MODAL HIỂN THỊ MÓN QUÀ THỰC TẾ (11 HỘP QUÀ) -->
   <div id="giftModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
     <div class="gift-modal-card">
       <div id="modalStepPill" class="modal-step-pill">🎁 Món quà bất ngờ</div>
@@ -1412,208 +849,95 @@
     </div>
   </div>
 
-  <!-- SÂN KHẤU BAO THƯ 3D (KHI TRÚNG 1 TRONG 4 HỘP THIỆP LỜI CHÚC) -->
-  <div id="envelopeModalBackdrop" class="envelope-modal-backdrop" role="dialog" aria-modal="true">
-    <div id="envelopeStageBadge" class="envelope-stage-badge">💌 Bạn vừa mở trúng Hộp Quà Tâm Thư 20/11!</div>
-
-    <div id="envelopeScene" class="envelope-scene">
-      <div id="envelopeCard" class="envelope-card" title="Nhấn để mở lời yêu thương">
-
-        <!-- BƯỚC 1: Mặt trước bao thư 20/11 -->
-        <div id="envelopeFront" class="envelope-face envelope-front"></div>
-
-        <!-- BƯỚC 2, 3, 4: Mặt sau bao thư + Nắp tam giác 3D + Tấm thiệp bên trong -->
-        <div class="envelope-face envelope-back">
-          <div class="envelope-interior-throat"></div>
-
-          <div id="envelopeLetterPreview" class="envelope-letter-preview">
-            <div class="letter-preview-header">✨ Tri Ân Ngày Nhà Giáo 20/11 ✨</div>
-            <div class="letter-preview-lines" id="envelopePreviewLines">
-              Lời Chúc Yêu Thương
-            </div>
-          </div>
-
-          <div id="envelopePocketBody" class="envelope-pocket-body"></div>
-
-          <svg class="envelope-pocket-rim" viewBox="0 0 708 541" preserveAspectRatio="none">
-            <path d="M 0,12 L 322,344 Q 354,365 386,344 L 708,12" fill="none" stroke="rgba(140,65,80,0.28)" stroke-width="4" />
-          </svg>
-
-          <div id="envelopeFlap3D" class="envelope-flap-3d">
-            <div id="flapOuterFace" class="flap-outer-face"></div>
-            <div class="flap-inner-face"></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div id="openLoveBtnWrap" class="open-love-btn-wrap">
-      <button id="openLoveBtn" class="open-love-btn" type="button">
-        💌 Mở lời yêu thương
-      </button>
-      <span class="envelope-status-caption">Nhấn vào nút hoặc chạm nhẹ vào bao thư để lật mở thiệp</span>
-    </div>
-  </div>
-
-  <!-- KHUNG TẤM THIỆP MỸ THUẬT & HIỆU ỨNG VIẾT CHỮ BÚT MÁY -->
-  <div id="letterFullscreenOverlay" class="letter-fullscreen-overlay" role="dialog" aria-modal="true">
-    <div class="letter-paper-card">
-      <svg class="corner-ornament tl" viewBox="0 0 40 40" fill="none">
-        <path d="M2 38V10C2 5.58 5.58 2 10 2H38" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
-        <path d="M8 32V12C8 9.79 9.79 8 12 8H32" stroke="#C59B27" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <circle cx="12" cy="12" r="2.2" fill="#C59B27"/>
-      </svg>
-      <svg class="corner-ornament tr" viewBox="0 0 40 40" fill="none">
-        <path d="M2 38V10C2 5.58 5.58 2 10 2H38" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
-        <path d="M8 32V12C8 9.79 9.79 8 12 8H32" stroke="#C59B27" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <circle cx="12" cy="12" r="2.2" fill="#C59B27"/>
-      </svg>
-      <svg class="corner-ornament bl" viewBox="0 0 40 40" fill="none">
-        <path d="M2 38V10C2 5.58 5.58 2 10 2H38" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
-        <path d="M8 32V12C8 9.79 9.79 8 12 8H32" stroke="#C59B27" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <circle cx="12" cy="12" r="2.2" fill="#C59B27"/>
-      </svg>
-      <svg class="corner-ornament br" viewBox="0 0 40 40" fill="none">
-        <path d="M2 38V10C2 5.58 5.58 2 10 2H38" stroke="#C59B27" stroke-width="2" stroke-linecap="round"/>
-        <path d="M8 32V12C8 9.79 9.79 8 12 8H32" stroke="#C59B27" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-        <circle cx="12" cy="12" r="2.2" fill="#C59B27"/>
-      </svg>
-
-      <div class="letter-top-ornament">
-        <div id="letterLotusDivider" class="lotus-divider">✿ Lời Chúc Yêu Thương ✿</div>
-      </div>
-
-      <svg class="letter-floral-watermark" viewBox="0 0 120 120" fill="none">
-        <path d="M60 15C50 38 44 60 60 95C76 60 70 38 60 15Z" fill="#D47A8C"/>
-        <path d="M60 95C38 78 24 55 25 32C44 45 55 65 60 95Z" fill="#D47A8C" opacity="0.8"/>
-        <path d="M60 95C82 78 96 55 95 32C76 45 65 65 60 95Z" fill="#D47A8C" opacity="0.8"/>
-        <path d="M60 95C30 92 14 78 8 58C30 62 46 75 60 95Z" fill="#C59B27" opacity="0.6"/>
-        <path d="M60 95C90 92 106 78 112 58C90 62 74 75 60 95Z" fill="#C59B27" opacity="0.6"/>
-      </svg>
-
-      <div id="letterScrollBody" class="letter-scroll-body">
-        <span id="typewriterText" class="fountain-pen-content"></span><span id="penCursor" class="fountain-pen-cursor">✒️</span>
-      </div>
-
-      <div class="letter-footer">
-        <div class="wax-seal-badge">
-          <div class="wax-seal-circle">
-            <span>TRI ÂN</span>
-            <span>20/11</span>
-          </div>
-          <span class="wax-seal-caption">Kính tặng Cô bằng cả tấm lòng</span>
-        </div>
-
-        <div class="letter-actions">
-          <button id="skipTypewriterBtn" class="secondary-paper-btn" type="button">
-            ⏩ Hiện toàn bộ
-          </button>
-          <button id="replayLetterBtn" class="secondary-paper-btn" type="button" style="display: none;">
-            🔄 Viết lại
-          </button>
-          <button id="continueAfterLetterBtn" class="primary-gold-btn" type="button" style="padding: 9px 20px; font-size: 0.9rem;">
-            <span id="continueAfterLetterText">🎁 Nhận thiệp &amp; Mở tiếp</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script>
     /* =========================================================================
-     * 1. CẤU HÌNH DỮ LIỆU: 6 MÓN QUÀ THỰC TẾ + 4 BỨC THIỆP LỜI CHÚC (TỔNG 10 HỘP)
+     * 1. CẤU HÌNH DỮ LIỆU: 11 MÓN QUÀ THỰC TẾ (TRỘN NGẪU NHIÊN 11 HỘP)
      * ========================================================================= */
 
     const GIFT_IMAGES = [
-      "assets/gift_1.png", // 1. Dây buộc tóc caro hồng kèm nơ mèo
-      "assets/gift_2.png", // 2. Scrunchie caro hồng nơ mèo đáng yêu
-      "assets/gift_3.png", // 3. Nơ ruy-băng kem gắn lược tóc bạc
-      "assets/gift_4.png", // 4. Gói lược tóc nơ satin trong suốt
-      "assets/gift_5.png", // 5. Quả lựu vàng xanh cô lập
-      "assets/gift_6.png"  // 6. Thanh long ruột trắng vỏ hồng magenta
+      "assets/gift_2.png",  // 1. Scrunchie caro hồng nơ mèo đáng yêu
+      "assets/gift_3.png",  // 2. Nơ ruy-băng kem gắn lược tóc bạc
+      "assets/gift_4.png",  // 3. Gói lược tóc nơ satin trong suốt
+      "assets/gift_7.png",  // 4. Kẹp tóc càng cua xoắn đen thanh lịch
+      "assets/gift_8.png",  // 5. Dây buộc tóc Scrunchie mèo hồng handmade
+      "assets/gift_9.png",  // 6. Kẹp tóc hoa năm cánh cam đào pastel
+      "assets/gift_10.png", // 7. Kẹp tóc vuông nâu tây nhám hiện đại
+      "assets/gift_11.png", // 8. Snack khoai tây Orion Swing bít tết
+      "assets/gift_12.png", // 9. Snack cua Oishi Crab Me! xốt chua ngọt
+      "assets/gift_13.png", // 10. Bánh cá Orion Marine Boy vị rong biển
+      "assets/gift_14.png"  // 11. Snack tôm cay Oishi giòn rụm
     ];
 
-    // 6 Món quà thực tế
+    // 11 Món quà thực tế
     const GIFT_LIST = [
       {
-        id: "gift_1",
-        image: GIFT_IMAGES[0],
-        title: "Dây Buộc Tóc Caro Hồng Nơ Mèo",
-        desc: "Chiếc dây buộc tóc caro hồng phấn đính nơ mèo nhỏ xinh — mong Cô mỗi ngày đến lớp đều thật rạng rỡ, trẻ trung và tràn ngập niềm vui!"
-      },
-      {
         id: "gift_2",
-        image: GIFT_IMAGES[1],
+        image: GIFT_IMAGES[0],
         title: "Scrunchie Hồng Phấn Điểm Sao",
         desc: "Món phụ kiện dịu dàng như chính nụ cười hiền hậu của Cô trên bục giảng — người luôn kiên nhẫn, bao dung và ấm áp với chúng em."
       },
       {
         id: "gift_3",
-        image: GIFT_IMAGES[2],
+        image: GIFT_IMAGES[1],
         title: "Lược Cài Tóc Nơ Ruy-Băng Kem",
         desc: "Chiếc lược cài tóc nơ kem thanh lịch tô điểm cho mái tóc dịu dàng của Cô trong những tiết học mùa thu đầy nắng."
       },
       {
         id: "gift_4",
-        image: GIFT_IMAGES[3],
+        image: GIFT_IMAGES[2],
         title: "Lược Cài Tóc Nơ Satin Sang Trọng",
         desc: "Món quà nhỏ xinh được gói ghém nâng niu bằng cả tấm lòng biết ơn chân thành gửi đến Cô kính yêu nhân ngày 20/11."
       },
       {
-        id: "gift_5",
+        id: "gift_7",
+        image: GIFT_IMAGES[3],
+        title: "Kẹp Tóc Càng Cua Xoắn Đen Thanh Lịch",
+        desc: "Chiếc kẹp tóc dáng xoắn đen tinh tế, gọn gàng — món phụ kiện nhỏ xinh đồng hành cùng Cô trong những giờ lên lớp tận tụy."
+      },
+      {
+        id: "gift_8",
         image: GIFT_IMAGES[4],
-        title: "Trái Lựu Ngọt Lành Đầu Mùa",
-        desc: "Trái lựu căng mọng tượng trưng cho sự viên mãn, may mắn và những hạt mầm tri thức ngọt ngào mà Cô đã tận tụy gieo trồng."
+        title: "Dây Buộc Tóc Scrunchie Mèo Hồng Handmade",
+        desc: "Chiếc scrunchie vải caro hồng họa tiết mèo nhỏ dễ thương — gửi gắm sự trân quý và lời chúc Cô luôn trẻ trung, yêu đời mỗi ngày."
       },
       {
-        id: "gift_6",
+        id: "gift_9",
         image: GIFT_IMAGES[5],
-        title: "Thanh Long Hồng Tươi Mát",
-        desc: "Kính chúc Cô luôn dồi dào sức khỏe, tươi tắn và ngọt ngào như trái ngọt đầu mùa sau những giờ giảng bài vất vả."
+        title: "Kẹp Tóc Hoa Năm Cánh Cam Đào Pastel",
+        desc: "Đóa hoa năm cánh dịu dàng sắc cam đào ấm áp — chúc Cô luôn rạng ngời, tỏa hương thơm ngát như đóa hoa giữa vườn tri thức."
+      },
+      {
+        id: "gift_10",
+        image: GIFT_IMAGES[6],
+        title: "Kẹp Tóc Vuông Nâu Tây Nhám Hiện Đại",
+        desc: "Sắc nâu trầm ấm và thanh nhã — tô điểm nét dịu dàng, đằm thắm của Cô trên bục giảng thân thương."
+      },
+      {
+        id: "gift_11",
+        image: GIFT_IMAGES[7],
+        title: "Snack Khoai Tây Orion Swing Bít Tết",
+        desc: "Gói bánh khoai tây giòn rụm đậm đà tiếp thêm năng lượng — chúc Cô có những phút giây nghỉ ngơi giữa giờ thật vui vẻ và thư giãn!"
+      },
+      {
+        id: "gift_12",
+        image: GIFT_IMAGES[8],
+        title: "Snack Cua Oishi Crab Me! Xốt Chua Ngọt",
+        desc: "Món quà ăn vặt tuổi thơ giòn tan chua ngọt — mong mang lại nụ cười thật tươi cho Cô sau những tiết dạy học chăm chỉ."
+      },
+      {
+        id: "gift_13",
+        image: GIFT_IMAGES[9],
+        title: "Bánh Cá Orion Marine Boy Vị Rong Biển",
+        desc: "Hộp bánh cá nhỏ xinh mang thông điệp Hạnh Phúc & Bình An — kính chúc Cô luôn ngập tràn niềm vui bên học trò thân yêu."
+      },
+      {
+        id: "gift_14",
+        image: GIFT_IMAGES[10],
+        title: "Snack Tôm Cay Oishi Giòn Rụm",
+        desc: "Gói snack tôm cay quen thuộc gói trọn tấm lòng hồn nhiên, chân thành của học trò gửi tặng Cô nhân ngày Nhà giáo Việt Nam 20/11!"
       }
     ];
 
-    // 4 Lời chúc thiệp 20/11
-    const WISH_CARDS = [
-      {
-        wishNumber: 1,
-        title: "Thiệp Tri Ân #01",
-        shortText: "Chúc cô luôn vững tin với con đường mình đang đi...",
-        fullText: `Chúc cô luôn vững tin với con đường mình đang đi. Những việc nhỏ cô làm bằng tình yêu hôm nay sẽ tạo nên những giá trị lớn lao ngày mai.
-
-Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
-      },
-      {
-        wishNumber: 2,
-        title: "Thiệp Tri Ân #02",
-        shortText: "Chúc cô luôn đủ đầy sức khỏe, kiên nhẫn, yêu thương...",
-        fullText: `Chúc cô luôn đủ đầy!
-Đủ sức khỏe để chăm sóc các con, đủ kiên nhẫn trước những tình huống bất ngờ, đủ yêu thương để sẻ chia và đủ hạnh phúc để mỉm cười mỗi ngày.
-
-Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
-      },
-      {
-        wishNumber: 3,
-        title: "Thiệp Tri Ân #03",
-        shortText: "Chúc cô luôn là phiên bản hạnh phúc nhất của chính mình...",
-        fullText: `Chúc cô luôn là phiên bản hạnh phúc nhất của chính mình!
-Mong cô không chỉ có những giờ dạy học thật vui mà còn có một gia đình bình an, những người đồng nghiệp tuyệt vời và thật nhiều khoảnh khắc đáng nhớ.
-
-Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
-      },
-      {
-        wishNumber: 4,
-        title: "Thiệp Tri Ân #04",
-        shortText: "Chúc cô luôn được tiếp thêm động lực và cảm thấy có giá trị...",
-        fullText: `Chúc cô luôn được tiếp thêm động lực, luôn cảm thấy mình có giá trị và luôn nhớ rằng: Có những tình yêu không cần nói thành lời, nhưng sẽ theo các con suốt cả cuộc đời.
-
-Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
-      }
-    ];
-
-    const ENVELOPE_FRONT_IMG = "assets/envelope_front.jpg";
-    const ENVELOPE_BACK_IMG  = "assets/envelope_back.jpg";
     const AUDIO_URL = "assets/bgm.mp3";
 
 
@@ -1663,12 +987,6 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       notes.forEach((n, idx) => playNote(n, 0.45, idx * 0.07, 0.038, "triangle"));
     }
 
-    function playPaperFlipSound() {
-      initAudio();
-      const notes = [392.00, 493.88, 587.33, 783.99];
-      notes.forEach((n, idx) => playNote(n, 0.55, idx * 0.09, 0.032, "sine"));
-    }
-
     function startBackgroundMelody() {
       initAudio();
       const btn = document.getElementById("audioToggleBtn");
@@ -1712,27 +1030,18 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
 
 
     /* =========================================================================
-     * 3. THUẬT TOÁN TRỘN NGẪU NHIÊN 10 HỘP (6 QUÀ + 4 THIỆP KHÔNG TRÙNG NHAU)
+     * 3. THUẬT TOÁN TRỘN NGẪU NHIÊN 11 HỘP QUÀ KHÔNG TRÙNG NHAU
      * ========================================================================= */
-    const TOTAL_BOXES = 10;
+    const TOTAL_BOXES = 11;
     let shuffledRewards = [];
     let openedCount = 0;
     let isAnimating = false;
     let activeBoxElement = null;
-    let activeWishText = "";
     let isReviewingFromSummary = false;
 
-    // Gắn ảnh bao thư mặt trước & mặt sau
-    document.getElementById("envelopeFront").style.backgroundImage = `url("${ENVELOPE_FRONT_IMG}")`;
-    document.getElementById("envelopePocketBody").style.backgroundImage = `url("${ENVELOPE_BACK_IMG}")`;
-    document.getElementById("flapOuterFace").style.backgroundImage = `url("${ENVELOPE_BACK_IMG}")`;
-
-    // Thuật toán trộn ngẫu nhiên Fisher-Yates (Đảm bảo 10 hộp mở ngẫu nhiên không bao giờ trùng nhau)
+    // Thuật toán trộn ngẫu nhiên Fisher-Yates (Đảm bảo 11 hộp mở ngẫu nhiên không bao giờ trùng nhau)
     function buildShuffledRewardsPool() {
-      const pool = [
-        ...GIFT_LIST.map((g) => ({ type: "gift", data: g })),
-        ...WISH_CARDS.map((w) => ({ type: "letter", data: w }))
-      ];
+      const pool = GIFT_LIST.map((g) => ({ type: "gift", data: g }));
       for (let i = pool.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = pool[i];
@@ -1747,7 +1056,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       slot.className = "gift-slot";
       slot.dataset.slotId = boxNumber;
 
-      const delay = ((boxNumber - 1) * 0.22).toFixed(2);
+      const delay = ((boxNumber - 1) * 0.18).toFixed(2);
       slot.innerHTML = `
         <div class="gift-box" data-box-id="${boxNumber}" style="--delay: ${delay}s" role="button" tabindex="0" aria-label="Hộp quà số ${boxNumber}">
           <div class="gift-inner-glow"></div>
@@ -1786,7 +1095,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       return slot;
     }
 
-    function initTenBoxesStage() {
+    function initBoxesStage() {
       shuffledRewards = buildShuffledRewardsPool();
       openedCount = 0;
       isAnimating = false;
@@ -1798,17 +1107,17 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       topRow.innerHTML = "";
       bottomRow.innerHTML = "";
 
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= 6; i++) {
         topRow.appendChild(createGiftBoxSlot(i));
       }
-      for (let i = 6; i <= 10; i++) {
+      for (let i = 7; i <= 11; i++) {
         bottomRow.appendChild(createGiftBoxSlot(i));
       }
 
       document.getElementById("giftsStage").style.display = "flex";
       document.getElementById("completionPanel").classList.remove("active");
       document.getElementById("subInstruction").textContent =
-        "Hãy chạm vào bất kỳ hộp quà nào (gồm 6 món quà & 4 bức tâm thư xuất hiện ngẫu nhiên) dành tặng Cô nhé!";
+        "Hãy chạm vào bất kỳ hộp quà nào trong 11 hộp quà bất ngờ xuất hiện ngẫu nhiên dành tặng Cô nhé!";
       updateProgressUI(0);
     }
 
@@ -1844,7 +1153,7 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       });
     }
 
-    // Xử lý khi nhấn vào 1 trong 10 hộp quà
+    // Xử lý khi nhấn vào 1 trong 11 hộp quà
     function handleGiftBoxClick(boxEl) {
       if (isAnimating || boxEl.classList.contains("opened-hidden")) return;
       isAnimating = true;
@@ -1854,30 +1163,23 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       startBackgroundMelody();
       playGiftOpenChime();
 
-      // Lấy phần thưởng ngẫu nhiên tiếp theo trong danh sách 10 phần thưởng đã xáo trộn
+      // Lấy phần thưởng ngẫu nhiên tiếp theo trong danh sách 11 món quà đã xáo trộn
       const reward = shuffledRewards[openedCount];
       openedCount++;
       boxEl.classList.add("opening");
       updateProgressUI(openedCount);
 
-      if (reward.type === "gift") {
-        // MỞ TRÚNG 1 TRONG 6 MÓN QUÀ THỰC TẾ
-        fireConfettiBurst(false);
-        setTimeout(() => {
-          openGiftModal(reward.data, openedCount);
-        }, 420);
-      } else {
-        // MỞ TRÚNG 1 TRONG 4 BỨC THIỆP LỜI CHÚC (HIỆN BAO THƯ 3D)
-        fireConfettiBurst(true);
-        setTimeout(() => {
-          openEnvelope3DModal(reward.data, openedCount);
-        }, 450);
-      }
+      fireConfettiBurst(openedCount === TOTAL_BOXES);
+      setTimeout(() => {
+        openGiftModal(reward.data, openedCount);
+      }, 420);
     }
 
     // Hiển thị cửa sổ Modal Món Quà
     function openGiftModal(giftData, stepNumber) {
-      document.getElementById("modalStepPill").textContent = `🎁 Hộp quà thứ ${stepNumber} / ${TOTAL_BOXES} • Món Quà Yêu Thương`;
+      document.getElementById("modalStepPill").textContent = isReviewingFromSummary
+        ? `🎁 Món quà #${stepNumber} / ${TOTAL_BOXES} • Bộ Sưu Tập 20/11`
+        : `🎁 Hộp quà thứ ${stepNumber} / ${TOTAL_BOXES} • Món Quà Yêu Thương`;
       const imgEl = document.getElementById("giftModalImg");
       imgEl.src = giftData.image;
       imgEl.alt = giftData.title;
@@ -1885,12 +1187,18 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
       document.getElementById("giftModalDesc").textContent = giftData.desc;
 
       const btnText = document.getElementById("closeGiftModalBtnText");
-      btnText.textContent = stepNumber < TOTAL_BOXES ? `Nhận quà & Mở tiếp (${TOTAL_BOXES - stepNumber} hộp còn lại)` : "Nhận quà & Hoàn tất 10 hộp";
+      if (isReviewingFromSummary) {
+        btnText.textContent = "Đóng cửa sổ";
+      } else {
+        btnText.textContent = stepNumber < TOTAL_BOXES
+          ? `Nhận quà & Mở tiếp (${TOTAL_BOXES - stepNumber} hộp còn lại)`
+          : "Nhận quà & Hoàn tất 11 hộp";
+      }
 
       document.getElementById("giftModalBackdrop").classList.add("active");
     }
 
-    // Đóng hộp quà vừa mở & kiểm tra xem đã mở đủ 10 hộp chưa
+    // Đóng hộp quà vừa mở & kiểm tra xem đã mở đủ 11 hộp chưa
     function finishCurrentBoxAndContinue() {
       if (activeBoxElement) {
         const boxToHide = activeBoxElement;
@@ -1915,191 +1223,36 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
 
     document.getElementById("closeGiftModalBtn").addEventListener("click", () => {
       document.getElementById("giftModalBackdrop").classList.remove("active");
-      finishCurrentBoxAndContinue();
-    });
-
-
-    /* =========================================================================
-     * 4. KỊCH BẢN BAO THƯ 3D & HIỆU ỨNG VIẾT CHỮ BÚT MÁY CHO 4 HỘP THIỆP
-     * ========================================================================= */
-    let envelopeSequenceStarted = false;
-    let typewriterTimer = null;
-    let charIndex = 0;
-
-    const envelopeModalBackdrop = document.getElementById("envelopeModalBackdrop");
-    const envelopeCard = document.getElementById("envelopeCard");
-    const openLoveBtn = document.getElementById("openLoveBtn");
-    const openLoveBtnWrap = document.getElementById("openLoveBtnWrap");
-    const envelopeLetterPreview = document.getElementById("envelopeLetterPreview");
-    const envelopeScene = document.getElementById("envelopeScene");
-    const letterFullscreenOverlay = document.getElementById("letterFullscreenOverlay");
-
-    // Đặt lại trạng thái Bao thư 3D về Bước 1 (Mặt trước)
-    function resetEnvelope3DState() {
-      envelopeSequenceStarted = false;
-      envelopeScene.classList.remove("recede-back");
-      envelopeLetterPreview.classList.remove("pull-out");
-      envelopeCard.classList.remove("flap-open", "flap-behind", "flipped");
-      openLoveBtnWrap.classList.remove("hidden-btn");
-    }
-
-    function openEnvelope3DModal(wishObj, stepNumber) {
-      resetEnvelope3DState();
-      activeWishText = wishObj.fullText;
-
-      document.getElementById("envelopeStageBadge").textContent =
-        `💌 Hộp quà thứ ${stepNumber} / ${TOTAL_BOXES} • ${wishObj.title} (Lời chúc số ${wishObj.wishNumber})`;
-      document.getElementById("letterLotusDivider").textContent =
-        `✿ Lời Chúc Yêu Thương ✿`;
-      document.getElementById("envelopePreviewLines").innerHTML =
-        `${wishObj.shortText}`;
-
-      const continueText = document.getElementById("continueAfterLetterText");
       if (isReviewingFromSummary) {
-        continueText.textContent = "Đóng thiệp";
-      } else {
-        continueText.textContent = stepNumber < TOTAL_BOXES
-          ? `🎁 Nhận thiệp & Mở tiếp (${TOTAL_BOXES - stepNumber} hộp còn lại)`
-          : "🎁 Nhận thiệp & Hoàn tất 10 hộp";
-      }
-
-      envelopeModalBackdrop.classList.add("active");
-    }
-
-    function triggerEnvelope3DSequence() {
-      if (envelopeSequenceStarted) return;
-      envelopeSequenceStarted = true;
-
-      playPaperFlipSound();
-      openLoveBtnWrap.classList.add("hidden-btn");
-
-      // Bước 2: Xoay 3D 180 độ ra mặt sau
-      envelopeCard.classList.add("flipped");
-
-      // Bước 3: Mở nắp tam giác mặt sau
-      setTimeout(() => {
-        playPaperFlipSound();
-        envelopeCard.classList.add("flap-open");
-
-        setTimeout(() => {
-          envelopeCard.classList.add("flap-behind");
-        }, 400);
-
-        // Bước 4: Rút thiệp lên & phóng to ra màn hình đọc thư
-        setTimeout(() => {
-          playGiftOpenChime();
-          envelopeLetterPreview.classList.add("pull-out");
-
-          setTimeout(() => {
-            envelopeScene.classList.add("recede-back");
-            letterFullscreenOverlay.classList.add("active");
-            fireConfettiBurst(true);
-
-            setTimeout(() => {
-              startFountainPenTypewriter();
-            }, 420);
-          }, 920);
-
-        }, 820);
-
-      }, 1180);
-    }
-
-    openLoveBtn.addEventListener("click", triggerEnvelope3DSequence);
-    envelopeCard.addEventListener("click", triggerEnvelope3DSequence);
-
-    const typewriterTextEl = document.getElementById("typewriterText");
-    const penCursorEl = document.getElementById("penCursor");
-    const letterScrollBody = document.getElementById("letterScrollBody");
-    const skipTypewriterBtn = document.getElementById("skipTypewriterBtn");
-    const replayLetterBtn = document.getElementById("replayLetterBtn");
-
-    function startFountainPenTypewriter() {
-      clearTimeout(typewriterTimer);
-      charIndex = 0;
-      typewriterTextEl.textContent = "";
-      penCursorEl.classList.remove("hidden-cursor");
-      skipTypewriterBtn.style.display = "inline-block";
-      replayLetterBtn.style.display = "none";
-
-      function writeNextChar() {
-        if (charIndex < activeWishText.length) {
-          const ch = activeWishText.charAt(charIndex);
-          typewriterTextEl.textContent += ch;
-          charIndex++;
-
-          letterScrollBody.scrollTop = letterScrollBody.scrollHeight;
-
-          let delay = 38;
-          if (ch === "," || ch === ":") delay = 120;
-          else if (ch === "." || ch === "!" || ch === "?") delay = 210;
-          else if (ch === "\n") delay = 150;
-
-          typewriterTimer = setTimeout(writeNextChar, delay);
-        } else {
-          finishTypewriter();
-        }
-      }
-
-      writeNextChar();
-    }
-
-    function finishTypewriter() {
-      clearTimeout(typewriterTimer);
-      typewriterTextEl.textContent = activeWishText;
-      penCursorEl.classList.add("hidden-cursor");
-      skipTypewriterBtn.style.display = "none";
-      replayLetterBtn.style.display = "inline-block";
-      letterScrollBody.scrollTop = letterScrollBody.scrollHeight;
-    }
-
-    skipTypewriterBtn.addEventListener("click", finishTypewriter);
-    replayLetterBtn.addEventListener("click", startFountainPenTypewriter);
-
-    // Khi nhấn nút "Nhận thiệp & Mở tiếp" trên tấm thiệp
-    document.getElementById("continueAfterLetterBtn").addEventListener("click", () => {
-      clearTimeout(typewriterTimer);
-      letterFullscreenOverlay.classList.remove("active");
-      envelopeModalBackdrop.classList.remove("active");
-
-      setTimeout(() => {
-        resetEnvelope3DState();
-      }, 400);
-
-      if (!isReviewingFromSummary) {
-        finishCurrentBoxAndContinue();
-      } else {
+        isReviewingFromSummary = false;
         isAnimating = false;
+      } else {
+        finishCurrentBoxAndContinue();
       }
     });
 
 
     /* =========================================================================
-     * 5. MÀN HÌNH TỔNG KẾT SAU KHI MỞ ĐỦ 10 HỘP & NÚT CHƠI LẠI
+     * 4. MÀN HÌNH TỔNG KẾT SAU KHI MỞ ĐỦ 11 HỘP & NÚT CHƠI LẠI
      * ========================================================================= */
     function showCompletionSummary() {
       fireConfettiBurst(true);
       document.getElementById("giftsStage").style.display = "none";
       document.getElementById("subInstruction").textContent =
-        "🌸 Chúc mừng Cô đã khám phá trọn vẹn 6 món quà và 4 bức tâm thư 20/11! 🌸";
+        "🌸 Chúc mừng Cô đã khám phá trọn vẹn 11 hộp quà yêu thương 20/11! 🌸";
 
       const row = document.getElementById("unlockedWishesRow");
       row.innerHTML = "";
-      WISH_CARDS.forEach((w) => {
+      GIFT_LIST.forEach((g, idx) => {
         const card = document.createElement("div");
         card.className = "unlocked-wish-card";
         card.innerHTML = `
-          <strong>💌 ${w.title}</strong>
-          <span>"${w.shortText}"</span>
+          <img src="${g.image}" alt="${g.title}" />
+          <strong>${g.title}</strong>
         `;
         card.addEventListener("click", () => {
           isReviewingFromSummary = true;
-          activeWishText = w.fullText;
-          document.getElementById("letterLotusDivider").textContent =
-            `✿ Lời Chúc Yêu Thương ✿`;
-          document.getElementById("continueAfterLetterText").textContent = "Đóng thiệp";
-          letterFullscreenOverlay.classList.add("active");
-          startFountainPenTypewriter();
+          openGiftModal(g, idx + 1);
         });
         row.appendChild(card);
       });
@@ -2108,11 +1261,11 @@ Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11 ❤️`
     }
 
     document.getElementById("resetAllBoxesBtn").addEventListener("click", () => {
-      initTenBoxesStage();
+      initBoxesStage();
     });
 
-    // Khởi tạo sân khấu 10 hộp quà ngay khi mở trang
-    initTenBoxesStage();
+    // Khởi tạo sân khấu 11 hộp quà ngay khi mở trang
+    initBoxesStage();
 
 
     /* =========================================================================
