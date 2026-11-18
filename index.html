@@ -6,7 +6,7 @@
   <title>Chúc Mừng Ngày Nhà Giáo Việt Nam 20/11</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E" />
 
-  <!-- Preload hình ảnh 11 món quà để hiệu ứng mở quà tức thì -->
+  <!-- Preload hình ảnh các món quà để hiệu ứng mở quà tức thì -->
   <link rel="preload" as="image" href="assets/gift_2.png" />
   <link rel="preload" as="image" href="assets/gift_3.png" />
   <link rel="preload" as="image" href="assets/gift_4.png" />
@@ -18,6 +18,14 @@
   <link rel="preload" as="image" href="assets/gift_12.png" />
   <link rel="preload" as="image" href="assets/gift_13.png" />
   <link rel="preload" as="image" href="assets/gift_14.png" />
+  <link rel="preload" as="image" href="assets/gift_15.png" />
+  <link rel="preload" as="image" href="assets/gift_16.png" />
+  <link rel="preload" as="image" href="assets/gift_17.png" />
+  <link rel="preload" as="image" href="assets/gift_18.png" />
+  <link rel="preload" as="image" href="assets/gift_19.png" />
+  <link rel="preload" as="image" href="assets/gift_20.png" />
+  <link rel="preload" as="image" href="assets/gift_21.png" />
+  <link rel="preload" as="image" href="assets/gift_22.png" />
 
   <!-- Google Fonts: Charm (chữ bút máy thư pháp) & Be Vietnam Pro / Quicksand (UI hiện đại, dễ đọc) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -197,7 +205,7 @@
       transition: all 0.4s ease;
     }
 
-    /* Thanh trạng thái đếm tiến độ 11 món quà */
+    /* Thanh trạng thái đếm tiến độ 32 món quà */
     .progress-bar-wrap {
       display: inline-flex;
       flex-direction: column;
@@ -233,12 +241,13 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 7px;
+      max-width: 480px;
+      gap: 5px;
     }
 
     .progress-dot {
-      width: 11px;
-      height: 11px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #EAD2D7;
       border: 1.5px solid rgba(197, 155, 39, 0.4);
@@ -252,7 +261,7 @@
       box-shadow: 0 0 10px rgba(197, 155, 39, 0.65);
     }
 
-    /* ================= SÂN KHẤU 11 HỘP QUÀ (HÀNG TRÊN 6, HÀNG DƯỚI 5) ================= */
+    /* ================= SÂN KHẤU 32 HỘP QUÀ (LƯỚI 4 HÀNG x 8 CỘT) ================= */
     .stage-wrapper {
       position: relative;
       width: 100%;
@@ -266,26 +275,17 @@
     .gifts-stage {
       width: 100%;
       max-width: 1060px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .gifts-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(8, minmax(74px, 102px));
       justify-content: center;
-      align-items: center;
-      gap: clamp(8px, 1.8vw, 22px);
-      width: 100%;
-      flex-wrap: nowrap;
+      gap: 14px 12px;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     /* Khung giữ vị trí từng hộp quà */
     .gift-slot {
-      width: clamp(92px, 12vw, 128px);
-      height: clamp(106px, 13.5vw, 142px);
+      width: 100%;
+      height: clamp(84px, 9.6vw, 112px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -372,8 +372,8 @@
     .gift-tag {
       position: relative;
       z-index: 4;
-      width: 28px;
-      height: 28px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 30%, #FFF8DC, #DFB74C 65%, #A6790D 100%);
       border: 1.5px solid #FFF2B2;
@@ -383,7 +383,7 @@
       justify-content: center;
       font-family: 'Charm', cursive;
       font-weight: 700;
-      font-size: 0.98rem;
+      font-size: 0.85rem;
       color: var(--ink-brown);
     }
 
@@ -418,8 +418,8 @@
       bottom: 92%;
       left: 50%;
       transform: translateX(-50%);
-      width: 62px;
-      height: 34px;
+      width: 48px;
+      height: 26px;
       z-index: 6;
       pointer-events: none;
     }
@@ -465,7 +465,7 @@
       pointer-events: none !important;
     }
 
-    /* ================= MÀN HÌNH TỔNG KẾT SAU KHI MỞ HẾT 11 HỘP ================= */
+    /* ================= MÀN HÌNH TỔNG KẾT SAU KHI MỞ HẾT 32 HỘP ================= */
     .completion-panel {
       display: none;
       flex-direction: column;
@@ -540,7 +540,7 @@
       line-height: 1.3;
     }
 
-    /* ================= MODAL NHẬN MÓN QUÀ THỰC TẾ (11 HỘP QUÀ) ================= */
+    /* ================= MODAL NHẬN MÓN QUÀ THỰC TẾ (32 HỘP QUÀ) ================= */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -714,7 +714,14 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* ================= RESPONSIVE CHO DI ĐỘNG ================= */
+    /* ================= RESPONSIVE CHO TABLET & DI ĐỘNG ================= */
+    @media (max-width: 900px) {
+      .gifts-stage {
+        grid-template-columns: repeat(6, minmax(68px, 90px));
+        gap: 12px 10px;
+      }
+    }
+
     @media (max-width: 680px) {
       .app-container {
         padding: 16px 8px 22px;
@@ -726,19 +733,16 @@
         font-size: 0.76rem;
       }
       .gifts-stage {
-        gap: 14px;
-      }
-      .gifts-row {
-        flex-wrap: wrap;
-        gap: 8px;
+        grid-template-columns: repeat(4, minmax(62px, 82px));
+        gap: 10px 8px;
       }
       .gift-slot {
-        width: clamp(68px, 21vw, 88px);
-        height: clamp(80px, 23vw, 100px);
+        width: 100%;
+        height: clamp(74px, 20vw, 92px);
       }
       .gift-bow {
-        width: 40px;
-        height: 22px;
+        width: 38px;
+        height: 21px;
       }
       .gift-tag {
         width: 20px;
@@ -771,55 +775,40 @@
   </button>
 
   <div class="app-container">
-    <!-- PHẦN ĐẦU TRANG: TIÊU ĐỀ & THANH TIẾN ĐỘ 11 MÓN QUÀ -->
+    <!-- PHẦN ĐẦU TRANG: TIÊU ĐỀ & THANH TIẾN ĐỘ 32 MÓN QUÀ -->
     <header class="site-header">
       <div class="date-badge">🌸 Tri Ân Ngày Nhà Giáo Việt Nam 20 • 11 🌸</div>
       <h1 class="main-title">
         Chúc Mừng <span class="gold-accent">Ngày Nhà Giáo Việt Nam</span> 20/11
       </h1>
       <p id="subInstruction" class="sub-instruction">
-        Hãy chạm vào bất kỳ hộp quà nào trong 11 hộp quà bất ngờ xuất hiện ngẫu nhiên dành tặng Cô nhé!
+        Hãy chạm vào bất kỳ hộp quà nào trong 32 hộp quà bất ngờ xuất hiện ngẫu nhiên dành tặng Cô nhé!
       </p>
 
       <div class="progress-bar-wrap">
         <div class="progress-text">
           <span>Đã mở:</span>
-          <span id="progressCountText" class="progress-count-badge">0/11 hộp quà</span>
+          <span id="progressCountText" class="progress-count-badge">0/32 hộp quà</span>
         </div>
-        <div id="progressDots" class="progress-dots">
-          <span class="progress-dot" data-step="1"></span>
-          <span class="progress-dot" data-step="2"></span>
-          <span class="progress-dot" data-step="3"></span>
-          <span class="progress-dot" data-step="4"></span>
-          <span class="progress-dot" data-step="5"></span>
-          <span class="progress-dot" data-step="6"></span>
-          <span class="progress-dot" data-step="7"></span>
-          <span class="progress-dot" data-step="8"></span>
-          <span class="progress-dot" data-step="9"></span>
-          <span class="progress-dot" data-step="10"></span>
-          <span class="progress-dot" data-step="11"></span>
-        </div>
+        <div id="progressDots" class="progress-dots"></div>
       </div>
     </header>
 
     <!-- KHU VỰC SÂN KHẤU TRUNG TÂM -->
     <main class="stage-wrapper">
 
-      <!-- SÂN KHẤU 11 HỘP QUÀ (Hàng trên 6 hộp, Hàng dưới 5 hộp) -->
-      <section id="giftsStage" class="gifts-stage" aria-label="Sân khấu 11 hộp quà">
-        <div class="gifts-row" id="giftsRowTop"></div>
-        <div class="gifts-row" id="giftsRowBottom"></div>
-      </section>
+      <!-- SÂN KHẤU 32 HỘP QUÀ -->
+      <section id="giftsStage" class="gifts-stage" aria-label="Sân khấu 32 hộp quà"></section>
 
-      <!-- MÀN HÌNH TỔNG KẾT SAU KHI ĐÃ MỞ HẾT CẢ 11 HỘP QUÀ -->
-      <section id="completionPanel" class="completion-panel" aria-label="Tổng kết 11 hộp quà 20/11">
-        <h2 class="completion-title">🎉 Cô Đã Mở Trọn Vẹn 11 Hộp Quà Yêu Thương! 🎉</h2>
+      <!-- MÀN HÌNH TỔNG KẾT SAU KHI ĐÃ MỞ HẾT CẢ 32 HỘP QUÀ -->
+      <section id="completionPanel" class="completion-panel" aria-label="Tổng kết 32 hộp quà 20/11">
+        <h2 class="completion-title">🎉 Cô Đã Mở Trọn Vẹn 32 Hộp Quà Yêu Thương! 🎉</h2>
         <p class="completion-sub">
           Nhấn vào bất kỳ món quà nào bên dưới để xem lại, hoặc mở lại từ đầu với thứ tự ngẫu nhiên mới:
         </p>
         <div id="unlockedWishesRow" class="unlocked-wishes-row"></div>
         <button id="resetAllBoxesBtn" class="primary-gold-btn" type="button">
-          <span>🔄 Mở lại 11 hộp quà (Trộn ngẫu nhiên mới)</span>
+          <span>🔄 Mở lại 32 hộp quà (Trộn ngẫu nhiên mới)</span>
         </button>
       </section>
 
@@ -833,7 +822,7 @@
   <!-- Audio nhạc nền bài hát Người Gieo Mầm Xanh -->
   <audio id="bgmAudio" src="assets/bgm.mp3" preload="auto" loop></audio>
 
-  <!-- MODAL HIỂN THỊ MÓN QUÀ THỰC TẾ (11 HỘP QUÀ) -->
+  <!-- MODAL HIỂN THỊ MÓN QUÀ THỰC TẾ (32 HỘP QUÀ) -->
   <div id="giftModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
     <div class="gift-modal-card">
       <div id="modalStepPill" class="modal-step-pill">🎁 Món quà bất ngờ</div>
@@ -851,25 +840,40 @@
 
   <script>
     /* =========================================================================
-     * 1. CẤU HÌNH DỮ LIỆU: 11 MÓN QUÀ THỰC TẾ (TRỘN NGẪU NHIÊN 11 HỘP)
+     * 1. CẤU HÌNH DỮ LIỆU: 32 MÓN QUÀ THỰC TẾ (TRỘN NGẪU NHIÊN 32 HỘP)
      * ========================================================================= */
 
     const GIFT_IMAGES = [
-      "assets/gift_2.png",  // 1. Scrunchie caro hồng nơ mèo đáng yêu
-      "assets/gift_3.png",  // 2. Nơ ruy-băng kem gắn lược tóc bạc
-      "assets/gift_4.png",  // 3. Gói lược tóc nơ satin trong suốt
-      "assets/gift_7.png",  // 4. Kẹp tóc càng cua xoắn đen thanh lịch
-      "assets/gift_8.png",  // 5. Dây buộc tóc Scrunchie mèo hồng handmade
-      "assets/gift_9.png",  // 6. Kẹp tóc hoa năm cánh cam đào pastel
-      "assets/gift_10.png", // 7. Kẹp tóc vuông nâu tây nhám hiện đại
-      "assets/gift_11.png", // 8. Snack khoai tây Orion Swing bít tết
-      "assets/gift_12.png", // 9. Snack cua Oishi Crab Me! xốt chua ngọt
-      "assets/gift_13.png", // 10. Bánh cá Orion Marine Boy vị rong biển
-      "assets/gift_14.png"  // 11. Snack tôm cay Oishi giòn rụm
+      "assets/gift_2.png",  // 0. Scrunchie caro hồng nơ mèo đáng yêu
+      "assets/gift_3.png",  // 1. Nơ ruy-băng kem gắn lược tóc bạc
+      "assets/gift_4.png",  // 2. Gói lược tóc nơ satin trong suốt
+      "assets/gift_7.png",  // 3. Kẹp tóc càng cua xoắn đen thanh lịch
+      "assets/gift_8.png",  // 4. Dây buộc tóc Scrunchie mèo hồng handmade
+      "assets/gift_9.png",  // 5. Kẹp tóc hoa năm cánh cam đào pastel
+      "assets/gift_10.png", // 6. Kẹp tóc vuông nâu tây nhám hiện đại
+      "assets/gift_11.png", // 7. Snack khoai tây Orion Swing bít tết
+      "assets/gift_12.png", // 8. Snack cua Oishi Crab Me! xốt chua ngọt
+      "assets/gift_13.png", // 9. Bánh cá Orion Marine Boy vị rong biển
+      "assets/gift_14.png", // 10. Snack tôm cay Oishi giòn rụm
+      "assets/gift_15.png", // 11. Bút xóa Thiên Long CP-02
+      "assets/gift_16.png", // 12. Kẹp tóc vuông đen nhám hiện đại
+      "assets/gift_17.png", // 13. Kẹp tóc càng cua ziczac đen nhám
+      "assets/gift_18.png", // 14. Kẹp tóc bán nguyệt trắng kem thanh lịch
+      "assets/gift_19.png", // 15. Kẹp tóc nơ ren trắng tiểu thư
+      "assets/gift_20.png", // 16. Kẹp tóc chuỗi hạt xám nhám tinh tế
+      "assets/gift_21.png", // 17. Kẹp tóc càng cua dáng nơ xám nhám
+      "assets/gift_22.png"  // 18. Kẹp tóc càng cua mini xám đen nhám
     ];
 
-    // 11 Món quà thực tế
-    const GIFT_LIST = [
+    function repeatGift(base, count, idPrefix) {
+      return Array.from({ length: count }, (_, idx) => ({
+        ...base,
+        id: count === 1 ? idPrefix : `${idPrefix}_${idx + 1}`
+      }));
+    }
+
+    // 11 Món quà gốc giữ nguyên
+    const ORIGINAL_GIFTS = [
       {
         id: "gift_2",
         image: GIFT_IMAGES[0],
@@ -936,6 +940,55 @@
         title: "Snack Tôm Cay Oishi Giòn Rụm",
         desc: "Gói snack tôm cay quen thuộc gói trọn tấm lòng hồn nhiên, chân thành của học trò gửi tặng Cô nhân ngày Nhà giáo Việt Nam 20/11!"
       }
+    ];
+
+    // Tổng 32 hộp quà: 11 hộp gốc + 6 hộp thêm từ mẫu cũ + 15 hộp từ 8 ảnh mới
+    const GIFT_LIST = [
+      ...ORIGINAL_GIFTS,
+      ...repeatGift(ORIGINAL_GIFTS[7], 1, "gift_11_extra"),
+      ...repeatGift(ORIGINAL_GIFTS[9], 1, "gift_13_extra"),
+      ...repeatGift(ORIGINAL_GIFTS[10], 1, "gift_14_extra"),
+      ...repeatGift(ORIGINAL_GIFTS[2], 3, "gift_4_extra"),
+      ...repeatGift({
+        image: GIFT_IMAGES[11],
+        title: "Bút Xóa Thiên Long CP-02 Tiện Dụng",
+        desc: "Chiếc bút xóa nhỏ gọn, hữu ích đồng hành cùng Cô bên từng trang giáo án chỉn chu và tâm huyết."
+      }, 7, "gift_15"),
+      ...repeatGift({
+        image: GIFT_IMAGES[12],
+        title: "Kẹp Tóc Vuông Đen Nhám Hiện Đại",
+        desc: "Chiếc kẹp vuông đen nhám tối giản mà sang trọng — tô điểm vẻ thanh lịch của Cô mỗi ngày đến lớp."
+      }, 2, "gift_16"),
+      ...repeatGift({
+        image: GIFT_IMAGES[13],
+        title: "Kẹp Tóc Càng Cua Ziczac Đen Nhám",
+        desc: "Thiết kế đường xoắn ziczac cá tính, chắc chắn — món phụ kiện tinh tế giúp mái tóc Cô luôn gọn gàng, duyên dáng."
+      }, 1, "gift_17"),
+      ...repeatGift({
+        image: GIFT_IMAGES[14],
+        title: "Kẹp Tóc Bán Nguyệt Trắng Kem Thanh Lịch",
+        desc: "Sắc trắng kem nhẹ nhàng, trang nhã — gửi tặng Cô những phút giây dịu êm và rạng rỡ nhân ngày 20/11."
+      }, 1, "gift_18"),
+      ...repeatGift({
+        image: GIFT_IMAGES[15],
+        title: "Kẹp Tóc Nơ Ren Trắng Tiểu Thư",
+        desc: "Chiếc kẹp nơ ren trắng tinh khôi, mềm mại — mang theo sự trân trọng và tình cảm ngọt ngào của học trò gửi đến Cô."
+      }, 1, "gift_19"),
+      ...repeatGift({
+        image: GIFT_IMAGES[16],
+        title: "Kẹp Tóc Chuỗi Hạt Xám Nhám Tinh Tế",
+        desc: "Tạo hình chuỗi hạt tròn xám nhám độc đáo, trang nhã — điểm nhấn dịu dàng cho mái tóc Cô thêm phần cuốn hút."
+      }, 1, "gift_20"),
+      ...repeatGift({
+        image: GIFT_IMAGES[17],
+        title: "Kẹp Tóc Càng Cua Dáng Nơ Xám Nhám",
+        desc: "Dáng kẹp vòng mềm mại cùng sắc xám nhám thanh tao — kính chúc Cô luôn bình an, hạnh phúc và tràn đầy nhiệt huyết."
+      }, 1, "gift_21"),
+      ...repeatGift({
+        image: GIFT_IMAGES[18],
+        title: "Kẹp Tóc Càng Cua Mini Xám Đen Nhám",
+        desc: "Chiếc kẹp mini nhỏ xinh nhưng vô cùng tiện lợi — món quà tri ân giản dị mà ấm áp gửi tặng Cô kính yêu."
+      }, 1, "gift_22")
     ];
 
     const AUDIO_URL = "assets/bgm.mp3";
@@ -1030,16 +1083,16 @@
 
 
     /* =========================================================================
-     * 3. THUẬT TOÁN TRỘN NGẪU NHIÊN 11 HỘP QUÀ KHÔNG TRÙNG NHAU
+     * 3. THUẬT TOÁN TRỘN NGẪU NHIÊN 32 HỘP QUÀ
      * ========================================================================= */
-    const TOTAL_BOXES = 11;
+    const TOTAL_BOXES = GIFT_LIST.length;
     let shuffledRewards = [];
     let openedCount = 0;
     let isAnimating = false;
     let activeBoxElement = null;
     let isReviewingFromSummary = false;
 
-    // Thuật toán trộn ngẫu nhiên Fisher-Yates (Đảm bảo 11 hộp mở ngẫu nhiên không bao giờ trùng nhau)
+    // Thuật toán trộn ngẫu nhiên Fisher-Yates (Đảm bảo 32 hộp được chia đủ theo đúng số lượng)
     function buildShuffledRewardsPool() {
       const pool = GIFT_LIST.map((g) => ({ type: "gift", data: g }));
       for (let i = pool.length - 1; i > 0; i--) {
@@ -1056,7 +1109,7 @@
       slot.className = "gift-slot";
       slot.dataset.slotId = boxNumber;
 
-      const delay = ((boxNumber - 1) * 0.18).toFixed(2);
+      const delay = (((boxNumber - 1) % 8) * 0.18).toFixed(2);
       slot.innerHTML = `
         <div class="gift-box" data-box-id="${boxNumber}" style="--delay: ${delay}s" role="button" tabindex="0" aria-label="Hộp quà số ${boxNumber}">
           <div class="gift-inner-glow"></div>
@@ -1102,22 +1155,25 @@
       activeBoxElement = null;
       isReviewingFromSummary = false;
 
-      const topRow = document.getElementById("giftsRowTop");
-      const bottomRow = document.getElementById("giftsRowBottom");
-      topRow.innerHTML = "";
-      bottomRow.innerHTML = "";
-
-      for (let i = 1; i <= 6; i++) {
-        topRow.appendChild(createGiftBoxSlot(i));
-      }
-      for (let i = 7; i <= 11; i++) {
-        bottomRow.appendChild(createGiftBoxSlot(i));
+      const stage = document.getElementById("giftsStage");
+      stage.innerHTML = "";
+      for (let i = 1; i <= TOTAL_BOXES; i++) {
+        stage.appendChild(createGiftBoxSlot(i));
       }
 
-      document.getElementById("giftsStage").style.display = "flex";
+      const dotsWrap = document.getElementById("progressDots");
+      dotsWrap.innerHTML = "";
+      for (let i = 1; i <= TOTAL_BOXES; i++) {
+        const dot = document.createElement("span");
+        dot.className = "progress-dot";
+        dot.dataset.step = i;
+        dotsWrap.appendChild(dot);
+      }
+
+      stage.style.display = "grid";
       document.getElementById("completionPanel").classList.remove("active");
       document.getElementById("subInstruction").textContent =
-        "Hãy chạm vào bất kỳ hộp quà nào trong 11 hộp quà bất ngờ xuất hiện ngẫu nhiên dành tặng Cô nhé!";
+        `Hãy chạm vào bất kỳ hộp quà nào trong ${TOTAL_BOXES} hộp quà bất ngờ xuất hiện ngẫu nhiên dành tặng Cô nhé!`;
       updateProgressUI(0);
     }
 
@@ -1153,7 +1209,7 @@
       });
     }
 
-    // Xử lý khi nhấn vào 1 trong 11 hộp quà
+    // Xử lý khi nhấn vào 1 trong 32 hộp quà
     function handleGiftBoxClick(boxEl) {
       if (isAnimating || boxEl.classList.contains("opened-hidden")) return;
       isAnimating = true;
@@ -1163,7 +1219,7 @@
       startBackgroundMelody();
       playGiftOpenChime();
 
-      // Lấy phần thưởng ngẫu nhiên tiếp theo trong danh sách 11 món quà đã xáo trộn
+      // Lấy phần thưởng ngẫu nhiên tiếp theo trong danh sách 32 món quà đã xáo trộn
       const reward = shuffledRewards[openedCount];
       openedCount++;
       boxEl.classList.add("opening");
@@ -1192,13 +1248,13 @@
       } else {
         btnText.textContent = stepNumber < TOTAL_BOXES
           ? `Nhận quà & Mở tiếp (${TOTAL_BOXES - stepNumber} hộp còn lại)`
-          : "Nhận quà & Hoàn tất 11 hộp";
+          : `Nhận quà & Hoàn tất ${TOTAL_BOXES} hộp`;
       }
 
       document.getElementById("giftModalBackdrop").classList.add("active");
     }
 
-    // Đóng hộp quà vừa mở & kiểm tra xem đã mở đủ 11 hộp chưa
+    // Đóng hộp quà vừa mở & kiểm tra xem đã mở đủ 32 hộp chưa
     function finishCurrentBoxAndContinue() {
       if (activeBoxElement) {
         const boxToHide = activeBoxElement;
@@ -1233,13 +1289,13 @@
 
 
     /* =========================================================================
-     * 4. MÀN HÌNH TỔNG KẾT SAU KHI MỞ ĐỦ 11 HỘP & NÚT CHƠI LẠI
+     * 4. MÀN HÌNH TỔNG KẾT SAU KHI MỞ ĐỦ 32 HỘP & NÚT CHƠI LẠI
      * ========================================================================= */
     function showCompletionSummary() {
       fireConfettiBurst(true);
       document.getElementById("giftsStage").style.display = "none";
       document.getElementById("subInstruction").textContent =
-        "🌸 Chúc mừng Cô đã khám phá trọn vẹn 11 hộp quà yêu thương 20/11! 🌸";
+        `🌸 Chúc mừng Cô đã khám phá trọn vẹn ${TOTAL_BOXES} hộp quà yêu thương 20/11! 🌸`;
 
       const row = document.getElementById("unlockedWishesRow");
       row.innerHTML = "";
@@ -1264,7 +1320,7 @@
       initBoxesStage();
     });
 
-    // Khởi tạo sân khấu 11 hộp quà ngay khi mở trang
+    // Khởi tạo sân khấu 32 hộp quà ngay khi mở trang
     initBoxesStage();
 
 
